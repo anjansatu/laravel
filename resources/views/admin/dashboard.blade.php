@@ -35,7 +35,7 @@
                   </ul>
                 </li>
               </ul>
-              <ul class="header-left"> 
+              <ul class="header-left">
                 <li class="onhover-dropdown"><span class="f-w-600">Dashboard</span><span><i class="middle" data-feather="chevron-down"></i></span>
                   <ul class="onhover-show-div left-dropdown">
                     <li> <a href="index.html">Default</a></li>
@@ -97,7 +97,7 @@
                     <li><a href="sample-page.html">Sample Page</a></li>
                     <li><a href="internationalization.html">Internationalization</a></li>
                     <li class="flyout-right"><a href="javascript:void(0)">Starter-Kit</a>
-                      <ul> 
+                      <ul>
                         <li class="flyout-right"><a href="javascript:void(0)">Color version</a>
                           <ul>
                             <li> <a href="starter-kit/index.html">Layout Light</a></li>
@@ -127,7 +127,7 @@
           </div>
           <div class="nav-right col-6 pull-right right-header p-0">
             <ul class="nav-menus">
-              <li> 
+              <li>
                 <div class="right-header ps-0">
                   <div class="input-group">
                     <div class="input-group-prepend"><span class="input-group-text mobile-search"><i class="fa fa-search"></i></span></div>
@@ -253,10 +253,9 @@
             </ul>
           </div>
           <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">                        
+            <div class="ProfileCard u-cf">
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
-            <div class="ProfileCard-realName">{{name}}</div>
             </div>
             </div>
           </script>
@@ -414,7 +413,7 @@
                     </ul>
                   </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i data-feather="box"></i><span>Ui Kits</span></a>
-                    <ul class="sidebar-submenu">                 
+                    <ul class="sidebar-submenu">
                       <li><a href="typography.html">Typography</a></li>
                       <li><a href="avatars.html">Avatars</a></li>
                       <li><a href="helper-classes.html">helper classes</a></li>
@@ -658,10 +657,10 @@
           <div class="container-fluid dashboard-default">
             <div class="row">
               <div class="col-xxl-6 col-xl-5 col-lg-6 dash-45 box-col-40">
-                <div class="card profile-greeting">               
+                <div class="card profile-greeting">
                   <div class="card-body">
                     <div class="d-sm-flex d-block justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <div class="weather d-flex">
                           <h2 class="f-w-400"> <span>28<sup><i class="fa fa-circle-o f-10"></i></sup>C </span></h2>
                           <div class="span sun-bg"><i class="icofont icofont-sun font-primary"></i></div>
@@ -672,7 +671,7 @@
                         <div class="badge badge-light-primary f-12">                         <i class="fa fa-clock-o"></i><span id="txt"></span></div>
                       </div>
                     </div>
-                    <div class="greeting-user"> 
+                    <div class="greeting-user">
                       <div class="profile-vector">
                         <ul class="dots-images">
                           <li class="dot-small bg-info dot-1"></li>
@@ -685,7 +684,7 @@
                           <li class="semi-medium bg-primary dot-8"></li>
                           <li class="dot-big bg-info dot-9"></li>
                         </ul><img class="img-fluid" src="/backend/assets/images/dashboard/default/profile.png" alt="">
-                        <ul class="vector-image"> 
+                        <ul class="vector-image">
                           <li> <img src="/backend/assets/images/dashboard/default/ribbon1.png" alt=""></li>
                           <li> <img src="/backend/assets/images/dashboard/default/ribbon3.png" alt=""></li>
                           <li> <img src="/backend/assets/images/dashboard/default/ribbon4.png" alt=""></li>
@@ -758,7 +757,7 @@
                 <div class="card total-investment">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">Total Investment<i class="fa fa-circle"> </i></p>
                         <h4>96.564%</h4>
                       </div>
@@ -824,7 +823,7 @@
                 <div class="card our-user">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">Our Total Users<i class="fa fa-circle"></i></p>
                         <h4>96.564%</h4>
                       </div>
@@ -847,14 +846,14 @@
                       <div id="user-chart"></div>
                       <div class="icon-donut"><i data-feather="arrow-up-circle"></i></div>
                     </div>
-                    <ul> 
+                    <ul>
                       <li>
                         <p class="f-w-600 font-primary f-12">Desktop</p><span class="f-w-600">96.564%</span>
                       </li>
-                      <li> 
+                      <li>
                         <p class="f-w-600 font-primary f-12">Mobile </p><span class="f-w-600">92.624%</span>
                       </li>
-                      <li> 
+                      <li>
                         <p class="f-w-600 font-primary f-12">Tablet </p><span class="f-w-600">46.564%</span>
                       </li>
                     </ul>
@@ -912,7 +911,7 @@
                 <div class="card our-earning">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">Our Total Earning<i class="fa fa-circle"> </i></p>
                         <h4>96.564%</h4>
                         <div class="setting-list">
@@ -982,7 +981,7 @@
                       <li>
                         <p class="f-w-600 font-primary f-12">Daily Earning</p><span class="f-w-600">96.564%</span>
                       </li>
-                      <li> 
+                      <li>
                         <p class="f-w-600 font-primary f-12">Monthly Earning </p><span class="f-w-600">96.564%</span>
                       </li>
                     </ul>
@@ -993,7 +992,7 @@
                 <div class="card appointment-detail">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">total appointment<i class="fa fa-circle"> </i></p>
                         <h4>12 meet</h4>
                       </div>
@@ -1029,8 +1028,8 @@
                               <button class="btn btn-primary" type="button" onclick="document.location='user-cards.html'">Pending</button>
                             </td>
                           </tr>
-                          <tr> 
-                            <td> 
+                          <tr>
+                            <td>
                               <div class="d-flex"><img class="img-fluid align-top circle" src="/backend/assets/images/dashboard/default/02.png" alt="">
                                 <div class="flex-grow-1"><a href="user-profile.html"><span>Venter loren</span></a>
                                   <p class="mb-0">Now</p>
@@ -1043,8 +1042,8 @@
                               <button class="btn btn-secondary" type="button" onclick="document.location='user-cards.html'">Done<i class="fa fa-check-circle"></i></button>
                             </td>
                           </tr>
-                          <tr> 
-                            <td> 
+                          <tr>
+                            <td>
                               <div class="d-flex"><img class="img-fluid align-top circle" src="/backend/assets/images/dashboard/default/03.png" alt="">
                                 <div class="flex-grow-1"><a href="user-profile.html"><span>Fran loain</span></a>
                                   <p class="mb-0">2 Day After</p>
@@ -1058,7 +1057,7 @@
                             </td>
                           </tr>
                           <tr>
-                            <td> 
+                            <td>
                               <div class="d-flex"><img class="img-fluid align-top circle" src="/backend/assets/images/dashboard/default/04.png" alt="">
                                 <div class="flex-grow-1"><a href="user-profile.html"><span>Loften Horen</span></a>
                                   <p class="mb-0">Day End</p>
@@ -1071,8 +1070,8 @@
                               <button class="btn btn-info" type="button" onclick="document.location='user-cards.html'">Pending</button>
                             </td>
                           </tr>
-                          <tr> 
-                            <td> 
+                          <tr>
+                            <td>
                               <div class="d-flex"><img class="img-fluid align-top circle" src="/backend/assets/images/dashboard/default/05.png" alt="">
                                 <div class="flex-grow-1"><a href="user-profile.html"><span>Loie fenter</span></a>
                                   <p class="mb-0">2 Day After</p>
@@ -1131,7 +1130,7 @@
             &lt;td&gt; 16 august &lt;/td&gt;
             &lt;td class="text-end"&gt;
               &lt;button class="btn btn-primary" type="button" onclick="document.location='user-cards.html'"&gt; Pending &lt;/button&gt;
-            &lt;/td&gt; 
+            &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td&gt;
@@ -1148,10 +1147,10 @@
             &lt;/td&gt;
             &lt;td&gt; 21 September &lt;/td&gt;
             &lt;td class="text-end"&gt;
-              &lt;button class="btn btn-secondary" type="button" onclick="document.location='user-cards.html'"&gt; Done 
+              &lt;button class="btn btn-secondary" type="button" onclick="document.location='user-cards.html'"&gt; Done
                 &lt;i class="fa fa-check-circle"&gt;
               &lt;/button&gt;
-            &lt;/td&gt; 
+            &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td&gt;
@@ -1169,7 +1168,7 @@
             &lt;td&gt; 06 March &lt;/td&gt;
             &lt;td class="text-end"&gt;
               &lt;button class="btn btn-success" type="button" onclick="document.location='user-cards.html'"&gt; Pending &lt;/button&gt;
-            &lt;/td&gt; 
+            &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td&gt;
@@ -1187,7 +1186,7 @@
             &lt;td&gt; 12 February &lt;/td&gt;
             &lt;td class="text-end"&gt;
               &lt;button class="btn btn-info" type="button" onclick="document.location='user-cards.html'"&gt; Pending &lt;/button&gt;
-            &lt;/td&gt; 
+            &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td&gt;
@@ -1205,7 +1204,7 @@
             &lt;td&gt; 06 March &lt;/td&gt;
             &lt;td class="text-end"&gt;
               &lt;button class="btn btn-danger" type="button" onclick="document.location='user-cards.html'"&gt; Pending &lt;/button&gt;
-            &lt;/td&gt; 
+            &lt;/td&gt;
           &lt;/tr&gt;
         &lt;/tbody&gt;
       &lt;/table&gt;
@@ -1220,7 +1219,7 @@
                 <div class="card use-country">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">User By Country<i class="fa fa-circle"> </i></p>
                         <h4>96.564%</h4>
                       </div>
@@ -1276,7 +1275,7 @@
                 <div class="card total-growth">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">Our Total Growth<i class="fa fa-circle"> </i></p>
                         <h4>96.564%</h4>
                       </div>
@@ -1295,7 +1294,7 @@
                     </div>
                   </div>
                   <div class="card-body pb-0">
-                    <div class="growth-chart"> 
+                    <div class="growth-chart">
                       <div id="growth-chart"></div>
                     </div>
                     <div class="code-box-copy">
@@ -1335,7 +1334,7 @@
                 <div class="card">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">Recent Activity<i class="fa fa-circle"> </i></p>
                         <h4>New & Update</h4>
                       </div>
@@ -1534,10 +1533,10 @@
   &lt;div class="card-body chat-box"&gt;
     &lt;div class="d-flex left-chat"&gt;
       &lt;div class="flex-grow-1"&gt;
-        &lt;div class="message-main"&gt; 
+        &lt;div class="message-main"&gt;
           &lt;p class="mb-0"&gt; Hii &lt;/p&gt;
         &lt;/div &gt;
-        &lt;div class="sub-message message-main"&gt; 
+        &lt;div class="sub-message message-main"&gt;
           &lt;p class="mb-0"&gt; Good Evening, My Friend &lt;/p&gt;
         &lt;/div &gt;
       &lt;/div&gt;
@@ -1545,7 +1544,7 @@
     &lt;/div&gt;
     &lt;div class="d-flex right-chat"&gt;
       &lt;div class="flex-grow-1 text-end"&gt;
-        &lt;div class="message-main pull-right"&gt; 
+        &lt;div class="message-main pull-right"&gt;
           &lt;p class="text-start mb-0"&gt; What can do for you &lt;/p&gt;
           &lt;div class="clearfix"&gt;&lt;/div&gt;
         &lt;/div &gt;
@@ -1553,7 +1552,7 @@
     &lt;/div&gt;
     &lt;div class="d-flex left-chat"&gt;
       &lt;div class="flex-grow-1"&gt;
-        &lt;div class="sub-message message-main mt-0"&gt; 
+        &lt;div class="sub-message message-main mt-0"&gt;
           &lt;p class="mb-0"&gt; Can i Borrow some money &lt;/p&gt;
         &lt;/div &gt;
       &lt;/div&gt;
@@ -1574,7 +1573,7 @@
                 <div class="card our-todolist">
                   <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
+                      <div class="flex-grow-1">
                         <p class="square-after f-w-600 header-text-primary">Our To-Do List<i class="fa fa-circle"> </i></p>
                         <h4>Todo List</h4>
                       </div>
@@ -1736,6 +1735,6 @@
         </footer>
       </div>
     </div>
-    
+
 @endsection
 
