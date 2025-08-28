@@ -22,16 +22,20 @@ class AdminAuthController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            'g-recaptcha-response' => 'required',
+            'g-recaptcha-response' => 'nullable',
         ]);
 
-        if (! $this->validateRecaptcha($request->input('g-recaptcha-response'))) {
-            return back()->withErrors(['g-recaptcha-response' => 'Captcha verification failed']);
+        if ($request->filled('g-recaptcha-response') &&
+            ! $this->validateRecaptcha($request->input('g-recaptcha-response'))) {
+            return back()->withErrors([
+                'g-recaptcha-response' => 'Captcha verification failed',
+            ]);
         }
 
         $credentials = $request->only('email', 'password');
         if (Auth::guard('admin')->attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
+
             return redirect()->intended(route('admin.dashboard'));
         }
 
@@ -43,6 +47,7 @@ class AdminAuthController extends Controller
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect()->route('admin.login');
     }
 

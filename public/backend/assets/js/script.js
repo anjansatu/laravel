@@ -57,7 +57,7 @@
 
     $('.show-hide span').on('click', function () {
         var $this = $(this);
-        var input = $this.parent().find('input');
+        var input = $this.closest('.form-input').find('input');
         if ($this.hasClass('show')) {
             input.attr('type', 'text');
             $this.removeClass('show');
@@ -68,7 +68,7 @@
     });
     $('form button[type="submit"]').on('click', function () {
         $('.show-hide span').addClass('show');
-        $('.show-hide').parent().find('input').attr('type', 'password');
+        $('.show-hide').closest('.form-input').find('input').attr('type', 'password');
     });
 
     /*=====================
