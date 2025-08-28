@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="/backend/assets/css/responsive.css">
 </head>
 <body onload="startTime()">
+    @include('admin.layouts.sidebar')
     @yield('content')
     <script src="/backend/assets/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap js-->
