@@ -44,6 +44,9 @@
                   </div>
                   <div class="form-group mb-3">
                     <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+                    @error('g-recaptcha-response')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                   <div class="form-group mb-0">
                     <div class="checkbox p-0">
