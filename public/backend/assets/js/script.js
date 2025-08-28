@@ -56,17 +56,19 @@
     $('.show-hide span').addClass('show');
 
     $('.show-hide span').on('click', function () {
-        if ($(this).hasClass('show')) {
-            $('input[name="login[password]"]').attr('type', 'text');
-            $(this).removeClass('show');
+        var $this = $(this);
+        var input = $this.closest('.form-input').find('input');
+        if ($this.hasClass('show')) {
+            input.attr('type', 'text');
+            $this.removeClass('show');
         } else {
-            $('input[name="login[password]"]').attr('type', 'password');
-            $(this).addClass('show');
+            input.attr('type', 'password');
+            $this.addClass('show');
         }
     });
     $('form button[type="submit"]').on('click', function () {
         $('.show-hide span').addClass('show');
-        $('.show-hide').parent().find('input[name="login[password]"]').attr('type', 'password');
+        $('.show-hide').closest('.form-input').find('input').attr('type', 'password');
     });
 
     /*=====================
