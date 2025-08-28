@@ -1,6 +1,5 @@
 @extends('admin.layouts.master')
 @section('content')
- @include('admin.layouts.sidebar')
     <!-- tap on top starts-->
     <div class="tap-top"><i data-feather="chevrons-up"></i></div>
     <!-- tap on tap ends-->
@@ -263,9 +262,10 @@
         </div>
       </div>
       <!-- Page Header Ends-->
-      <!-- Page Body Start-->
-      <div class="page-body-wrapper">
-        <div class="page-body">
+        <!-- Page Body Start-->
+        <div class="page-body-wrapper">
+          @include('admin.layouts.sidebar')
+          <div class="page-body">
           <div class="container-fluid">
             <div class="page-title">
               <div class="row">
