@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+.container { width: 90%; margin: 20px auto; }
+.topbar { background: #f8f9fa; padding: 10px; display: flex; justify-content: space-between; align-items: center; }
+.topbar .nav { list-style: none; display: flex; gap: 10px; }
+.topbar .nav li { display: inline; }
+.auth-form, .dashboard { max-width: 400px; margin: 20px auto; }
+.auth-form form div { margin-bottom: 10px; }
+.cards { display: flex; gap: 10px; }
+.card { background: #e9ecef; padding: 20px; flex: 1; text-align: center; }
