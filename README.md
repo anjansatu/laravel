@@ -64,11 +64,3 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 The seeded admin user uses `andmin@email.com` / `12345678`.
 
-## Environment
-
-Set the following variables in your `.env` file to enable Google reCAPTCHA:
-
-```
-RECAPTCHA_SITE_KEY=
-RECAPTCHA_SECRET_KEY=
-```

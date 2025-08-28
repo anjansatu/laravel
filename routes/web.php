@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AdminAuthController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::prefix('admin')->group(function () {
