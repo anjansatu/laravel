@@ -59,3 +59,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Admin account
+
+The seeded admin user uses `andmin@email.com` / `12345678`.
+
+## Environment
+
+Set the following variables in your `.env` file to enable Google reCAPTCHA:
+
+```
+RECAPTCHA_SITE_KEY=
+RECAPTCHA_SECRET_KEY=
+```
