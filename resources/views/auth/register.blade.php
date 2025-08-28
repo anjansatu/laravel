@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('content')
+@section('user-content')
 <div class="auth-form">
     <h2>Register</h2>
     <form method="POST" action="{{ route('register') }}">

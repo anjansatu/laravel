@@ -27,7 +27,7 @@
             </div>
         @endif
 
-        @yield('content')
+        @yield('user-content')
     </div>
 
     <script src="{{ asset('frontend/assets/js/jquery.min.js') }}"></script>
