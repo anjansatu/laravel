@@ -34,14 +34,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background-size: cover;
         }
 
         .auth-card {
+            width: 100%;
+            max-width: 500px;
             background-color: rgba(255, 255, 255, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            border: 2px solid #FFD700;
+            border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(5px);
+        }
+
+        .auth-card .form-control {
+            border: 1px solid purple;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            padding: 8px 12px;
         }
     </style>
 </head>
