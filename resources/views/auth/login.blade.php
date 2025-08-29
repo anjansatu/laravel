@@ -1,26 +1,39 @@
-@extends('layouts.master')
+@extends('user.master')
 
-@section('user-content')
-<div class="auth-form">
-    <h2>Login</h2>
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-        <div>
-            <label for="login">Username / Email / Phone</label>
-            <input type="text" name="login" id="login" value="{{ old('login') }}" required>
+@section('title', 'Login')
+
+@section('content')
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">Login</div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="login" class="form-label">Username / Email / Phone</label>
+                                <input type="text" name="login" id="login" class="form-control" value="{{ old('login') }}" required autofocus>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" name="remember" class="form-check-input" id="remember">
+                                <label class="form-check-label" for="remember">Remember Me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <a href="{{ route('password.request') }}" class="d-block">Forgot Password?</a>
+                            <a href="{{ route('register') }}" class="d-block">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <div>
-            <label><input type="checkbox" name="remember"> Remember Me</label>
-        </div>
-        <button type="submit">Login</button>
-    </form>
-    <div class="links">
-        <a href="{{ route('password.request') }}">Forgot Password?</a>
-        <a href="{{ route('register') }}">Register</a>
     </div>
-</div>
+</section>
 @endsection
