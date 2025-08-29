@@ -79,7 +79,7 @@ class AuthController extends Controller
      */
     public function dashboard()
     {
-        return view('dashboard.index');
+        return view('user.dashboard');
     }
 
     /**
@@ -87,7 +87,7 @@ class AuthController extends Controller
      */
     public function adminDashboard()
     {
-        return view('dashboard.admin');
+        return view('admin.dashboard');
     }
 
     /**
