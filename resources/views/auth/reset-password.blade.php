@@ -10,10 +10,10 @@
         <div class="card-body">
             <form method="POST" action="{{ route('password.update') }}">
                 @csrf
-                <input type="hidden" name="token" value="{{ $token }}">
+                <input type="hidden" name="email" value="{{ old('email', session('otp_email')) }}">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" required>
+                    <label for="otp" class="form-label">OTP</label>
+                    <input type="text" name="otp" id="otp" class="form-control" required placeholder="123456">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">New Password</label>

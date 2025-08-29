@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ForgotPasswordRequest;
 use App\Http\Requests\ResetPasswordRequest;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Auth;
+use App\Mail\PasswordResetOtpMail;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 
 class PasswordResetController extends Controller
 {
     /**
-     * Display the form to request a password reset link.
+     * Display the form to request a password reset OTP.
      */
     public function showForgot()
     {
@@ -20,47 +20,52 @@ class PasswordResetController extends Controller
     }
 
     /**
-     * Handle sending the password reset link.
+     * Send an OTP to the user's email address.
      */
-    public function sendResetLink(ForgotPasswordRequest $request)
+    public function sendOtp(ForgotPasswordRequest $request)
     {
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        $user = User::where('email', $request->email)->first();
 
-        return $status === Password::RESET_LINK_SENT
-            ? back()->with('status', __($status))
-            : back()->withErrors(['email' => __($status)]);
+        $otp = (string) rand(100000, 999999);
+        $user->forceFill([
+            'otp' => $otp,
+            'otp_expires_at' => now()->addMinutes(10),
+        ])->save();
+
+        Mail::to($user->email)->send(new PasswordResetOtpMail($otp));
+
+        session(['otp_email' => $user->email]);
+
+        return redirect()->route('password.reset');
     }
 
     /**
-     * Show the reset password form.
+     * Show the form to reset the password using OTP.
      */
-    public function showReset(string $token)
+    public function showReset()
     {
-        return view('auth.reset-password', ['token' => $token]);
+        return view('auth.reset-password');
     }
 
     /**
-     * Handle resetting the password.
+     * Reset the user's password after verifying the OTP.
      */
     public function resetPassword(ResetPasswordRequest $request)
     {
-        $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
-            function ($user, $password) {
-                $user->forceFill([
-                    'password' => Hash::make($password),
-                ])->save();
+        $user = User::where('email', $request->email)->first();
 
-                $user->setRememberToken(Str::random(60));
+        if (! $user || $user->otp !== $request->otp || now()->greaterThan($user->otp_expires_at)) {
+            return back()->withErrors(['otp' => 'Invalid or expired OTP.']);
+        }
 
-                Auth::login($user);
-            }
-        );
+        $user->forceFill([
+            'password' => Hash::make($request->password),
+            'otp' => null,
+            'otp_expires_at' => null,
+        ])->save();
 
-        return $status === Password::PASSWORD_RESET
-            ? redirect()->route('dashboard')->with('status', __($status))
-            : back()->withErrors(['email' => [__($status)]]);
+        session()->forget('otp_email');
+
+        return redirect()->route('login')->with('status', 'Password reset successful.');
     }
 }

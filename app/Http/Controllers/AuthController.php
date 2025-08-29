@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistrationSuccessMail;
 
 class AuthController extends Controller
 {
@@ -28,6 +30,8 @@ class AuthController extends Controller
         $data['password'] = Hash::make($data['password']);
 
         $user = User::create($data);
+
+        Mail::to($user->email)->send(new RegistrationSuccessMail());
 
         Auth::login($user);
         $request->session()->regenerate();

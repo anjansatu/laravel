@@ -14,7 +14,7 @@
                     <label for="email" class="form-label">Email Address</label>
                     <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" required>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Send Reset Link</button>
+                <button type="submit" class="btn btn-primary w-100">Send OTP</button>
             </form>
             <div class="text-center mt-3">
                 <a href="{{ route('login') }}">Back to Login</a>
