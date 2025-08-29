@@ -29,19 +29,10 @@
     <!-- RESPONSIVE CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
     <style>
-        .auth-wrapper {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .auth-card {
-            background: rgba(144, 238, 144, 0.15);
-            border: 1px solid rgba(144, 238, 144, 0.4);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: .75rem;
+            background-color: rgba(144, 238, 144, 0.3);
+            border: 1px solid rgba(144, 238, 144, 0.5);
+            backdrop-filter: blur(5px);
         }
     </style>
 </head>

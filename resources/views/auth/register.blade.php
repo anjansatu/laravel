@@ -3,8 +3,9 @@
 @section('title', 'Register')
 
 @section('content')
-<section class="auth-wrapper w-100">
-    <div class="card auth-card w-100" style="max-width: 400px;">
+
+<section class="min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="card auth-card" style="width: 100%; max-width: 400px;">
         <div class="card-header text-center">Register</div>
         <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
