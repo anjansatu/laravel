@@ -32,6 +32,17 @@
                         <li><a href="#main-content">Blog</a></li>
                         <li><a href="{{ asset('frontend/about.html') }}">About</a></li>
                         <li><a href="{{ asset('frontend/contact.html') }}">Contact</a></li>
+                        @auth
+                            <li>
+                                <a href="{{ route('logout') }}" class="slide-btn"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        @endauth
                     </ul>
                 </div>
                 <!-- / END CONTENT FOR TOGGLING -->
