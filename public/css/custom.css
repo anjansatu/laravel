@@ -1,0 +1,23 @@
+/* Custom styles for colorful tables and stylish buttons */
+.table-colorful thead {
+    background: linear-gradient(90deg, #4e54c8, #8f94fb);
+    color: #fff;
+}
+.table-colorful tbody tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+.table-colorful tbody tr:hover {
+    background-color: #e0e7ff;
+}
+.btn:not(.btn-link) {
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s, transform 0.2s;
+}
+.btn:not(.btn-link):hover {
+    background: linear-gradient(45deg, #f06595, #ff6b6b);
+    transform: translateY(-2px);
+}

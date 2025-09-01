@@ -6,7 +6,7 @@
     @if(session('status'))
         <div class="alert alert-success">{{ session('status') }}</div>
     @endif
-    <table class="table table-bordered">
+    <table class="table table-bordered table-colorful">
         <thead>
             <tr>
                 <th>User</th>

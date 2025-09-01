@@ -14,7 +14,7 @@
     </form>
 
     <h3 class="mt-4">Deposit History</h3>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-colorful">
         <thead>
             <tr>
                 <th>Amount</th>
