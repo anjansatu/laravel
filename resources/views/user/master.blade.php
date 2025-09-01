@@ -75,5 +75,14 @@
     <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
     <!-- scripts js -->
     <script src="{{ asset('frontend/assets/js/scripts.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('status'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                text: '{{ session('status') }}'
+            });
+        </script>
+    @endif
 </body>
 </html>

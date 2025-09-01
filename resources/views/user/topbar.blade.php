@@ -30,6 +30,7 @@
                             <li><a href="#">{{ auth()->user()->username }}</a></li>
                             <li><a href="#">Balance: {{ auth()->user()->balance }}</a></li>
                             <li><a href="{{ route('deposit.index') }}">Deposit</a></li>
+                            <li><a href="{{ route('chat.index') }}">Chat</a></li>
                             <li>
                                 <a href="{{ route('logout') }}" class="slide-btn"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
