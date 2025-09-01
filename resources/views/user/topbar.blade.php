@@ -29,7 +29,15 @@
                         @auth
                             <li><a href="#">{{ auth()->user()->username }}</a></li>
                             <li><a href="#">Balance: {{ auth()->user()->balance }}</a></li>
-                            <li><a href="{{ route('deposit.index') }}">Deposit</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Deposit <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('deposit.create') }}">Deposit</a></li>
+                                    <li><a href="{{ route('deposit.history') }}">Deposit History</a></li>
+                                </ul>
+                            </li>
                             <li><a href="{{ route('chat.index') }}">Chat</a></li>
                             <li>
                                 <a href="{{ route('logout') }}" class="slide-btn"
