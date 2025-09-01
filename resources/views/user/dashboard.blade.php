@@ -26,10 +26,10 @@
                         <div class="row">
                             <div class="col-md-12 text-center">
                                 <div class="header-text header-desc-area">
-                                    <h2>Bringing great design home!</h2>
+                                    <h2>World Best resource here!</h2>
                                     <p>Lorem Ipsum is simly dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                                    <a class="slide-btn smoth-scroll" href="/frontend/about.html">About Us</a>
-                                    <a class="slide-btn smoth-scroll" href="/frontend/contact.html">Contact Us</a>
+                                    <a class="slide-btn smoth-scroll" href="/frontend/about.html">SSN</a>
+                                    <a class="slide-btn smoth-scroll" href="/frontend/contact.html">Bank </a>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
     <!-- / END HOMEPAGE DESIGN AREA -->
 
     <!-- START MAIN CONTENT DESIGN AREA -->
- 
+
     <!-- / END MAIN CONTENT DESIGN AREA -->
 
     <!-- START PHOTO GALLERY DESIGN AREA -->
