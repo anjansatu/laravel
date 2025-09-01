@@ -8,6 +8,8 @@ use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\Admin\DepositController as AdminDepositController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\Admin\MessageController as AdminMessageController;
 
 // Route::get('/', function () {
 //     return auth()->check()
@@ -35,6 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/deposit/create', [DepositController::class, 'create'])->name('deposit.create');
     Route::post('/deposit', [DepositController::class, 'store'])->name('deposit.store');
     Route::get('/deposit/history', [DepositController::class, 'history'])->name('deposit.history');
+
+    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+    Route::post('/chat', [ChatController::class, 'store'])->name('chat.store');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
@@ -65,5 +70,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
         Route::get('/users/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
         Route::put('/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
+
+        Route::get('/messages', [AdminMessageController::class, 'index'])->name('admin.messages.index');
+        Route::get('/messages/{user}', [AdminMessageController::class, 'show'])->name('admin.messages.show');
+        Route::post('/messages/{user}', [AdminMessageController::class, 'store'])->name('admin.messages.store');
     });
 });

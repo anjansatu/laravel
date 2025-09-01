@@ -264,83 +264,23 @@
                 <div class="mode"><i class="fa fa-moon-o"></i></div>
               </li>
               <li class="onhover-dropdown">
-                <div class="notification-box"><i data-feather="bell"></i></div>
+                @php($pendingDeposits = \App\Models\Deposit::where('status','pending')->latest()->take(5)->get())
+                <div class="notification-box"><i data-feather="bell"></i><span class="badge rounded-pill bg-primary">{{ $pendingDeposits->count() }}</span></div>
                 <ul class="notification-dropdown onhover-show-div">
-                  <li><i data-feather="bell">            </i>
-                    <h6 class="f-18 mb-0">Notitications</h6>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0"><i data-feather="truck"></i></div>
-                      <div class="flex-grow-1">
-                        <p><a href="order-history.html">Delivery processing </a><span class="pull-right">6 hr</span></p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0"><i data-feather="shopping-cart"></i></div>
-                      <div class="flex-grow-1">
-                        <p><a href="cart.html">Order Complete</a><span class="pull-right">3 hr</span></p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0"><i data-feather="file-text"></i></div>
-                      <div class="flex-grow-1">
-                        <p><a href="invoice-template.html">Tickets Generated</a><span class="pull-right">1 hr</span></p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0"><i data-feather="send"></i></div>
-                      <div class="flex-grow-1">
-                        <p><a href="email_inbox.html">Delivery Complete</a><span class="pull-right">45 min</span></p>
-                      </div>
-                    </div>
-                  </li>
-                  <li><a class="btn btn-primary" href="javascript:void(0)">Check all notification</a></li>
+                  <li><i data-feather="bell"></i><h6 class="f-18 mb-0">Deposits</h6></li>
+                  @foreach($pendingDeposits as $deposit)
+                    <li><a href="{{ route('admin.deposits.pending') }}#deposit-{{ $deposit->id }}">{{ $deposit->user->username }} - {{ $deposit->amount }}</a></li>
+                  @endforeach
                 </ul>
               </li>
               <li class="onhover-dropdown">
-                <div class="message"><i data-feather="message-square"></i></div>
-                <ul class="message-dropdown onhover-show-div">
-                  <li><i data-feather="message-square">            </i>
-                    <h6 class="f-18 mb-0">Messages</h6>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-start">
-                      <div class="message-img bg-light-primary"><img src="{{ asset('backend/assets/css/responsive.css') }}" alt=""></div>
-                      <div class="flex-grow-1">
-                        <h5 class="mb-1"><a href="email_inbox.html">Emay Walter</a></h5>
-                        <p>Do you want to go see movie?</p>
-                      </div>
-                      <div class="notification-right"><i data-feather="x"></i></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-start">
-                      <div class="message-img bg-light-primary"><img src="{{ asset('backend/assets/images/user/6.jpg') }}" alt=""></div>
-                      <div class="flex-grow-1">
-                        <h5 class="mb-1"><a href="email_inbox.html">Jason Borne</a></h5>
-                        <p>Thank you for rating us.</p>
-                      </div>
-                      <div class="notification-right"><i data-feather="x"></i></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-start">
-                      <div class="message-img bg-light-primary"><img src="{{ asset('backend/assets/images/user/10.jpg') }}" alt=""></div>
-                      <div class="flex-grow-1">
-                        <h5 class="mb-1"><a href="email_inbox.html">Sarah Loren</a></h5>
-                        <p>What`s the project report update?</p>
-                      </div>
-                      <div class="notification-right"><i data-feather="x"></i></div>
-                    </div>
-                  </li>
-                  <li><a class="btn btn-primary" href="email_inbox.html">Check Messages</a></li>
+                @php($unread = \App\Models\Message::where('sender','user')->whereNull('read_at')->latest()->get())
+                <div class="notification-box"><i data-feather="message-square"></i><span class="badge rounded-pill bg-primary">{{ $unread->count() }}</span></div>
+                <ul class="notification-dropdown onhover-show-div">
+                  <li><i data-feather="message-square"></i><h6 class="f-18 mb-0">Messages</h6></li>
+                  @foreach($unread->groupBy('user_id') as $userId => $messages)
+                    <li><a href="{{ route('admin.messages.show', $userId) }}">{{ $messages->first()->user->username }} ({{ $messages->count() }})</a></li>
+                  @endforeach
                 </ul>
               </li>
               <li class="maximize"><a href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize-2"></i></a></li>
@@ -447,5 +387,14 @@
     <script src="{{ asset('backend/assets/js/theme-customizer/customizer.js') }}"></script>
     <!-- login js-->
     @stack('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('status'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            text: '{{ session('status') }}'
+        });
+    </script>
+    @endif
   </body>
 </html>

@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             @foreach($deposits as $deposit)
-            <tr>
+            <tr id="deposit-{{ $deposit->id }}">
                 <td>{{ $deposit->user->username }}</td>
                 <td>{{ $deposit->amount }}</td>
                 <td>{{ $deposit->currency }}</td>
