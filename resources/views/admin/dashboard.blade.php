@@ -241,12 +241,15 @@
                 </div>
               </li>
               <li class="profile-nav onhover-dropdown">
-                <div class="account-user"><i data-feather="user"></i></div>
+                <a href="{{ route('admin.profile') }}" class="account-user"><i data-feather="user"></i></a>
                 <ul class="profile-dropdown onhover-show-div">
-                  <li><a href="user-profile.html"><i data-feather="user"></i><span>Account</span></a></li>
-                  <li><a href="email_inbox.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                  <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="login.html"><i data-feather="log-in"> </i><span>Log in</span></a></li>
+                  <li><a href="{{ route('admin.profile') }}"><i data-feather="user"></i><span>Profile</span></a></li>
+                  <li>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('admin-logout-form').submit();">
+                      <i data-feather="log-out"></i><span>Logout</span>
+                    </a>
+                    <form id="admin-logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">@csrf</form>
+                  </li>
                 </ul>
               </li>
             </ul>

@@ -52,7 +52,7 @@
         .auth-card .form-control {
             border: 1px solid purple;
             border-radius: 8px;
-            font-size: 1.2rem;
+            font-size: 100%;
             font-weight: bold;
             color: #007bff;
             padding: 12px 16px;
