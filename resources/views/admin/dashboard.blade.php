@@ -389,7 +389,7 @@
                   </div>
                   <div class="card-body">
                     <div class="table-responsive theme-scrollbar">
-                      <table class="table">
+                      <table class="table table-colorful">
                         <tbody>
                           <tr>
                             <td>

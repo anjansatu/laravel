@@ -3,7 +3,7 @@
 @section('admin-content')
 <div class="container mt-5">
     <h2>Rejected Deposits</h2>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-colorful">
         <thead>
             <tr>
                 <th>User</th>
