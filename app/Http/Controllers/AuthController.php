@@ -35,6 +35,7 @@ class AuthController extends Controller
 
         Auth::login($user);
         $request->session()->regenerate();
+        session(['show_deposit_popup' => true]);
 
         return redirect()->route('dashboard');
     }
@@ -60,6 +61,9 @@ class AuthController extends Controller
         if ($user && Hash::check($request->input('password'), $user->password)) {
             Auth::login($user, $request->boolean('remember'));
             $request->session()->regenerate();
+            if ($user->deposits()->count() === 0) {
+                session(['show_deposit_popup' => true]);
+            }
             return redirect()->route('dashboard');
         }
 
@@ -83,7 +87,8 @@ class AuthController extends Controller
      */
     public function dashboard()
     {
-        return view('user.dashboard');
+        $showDepositPopup = session()->pull('show_deposit_popup', false);
+        return view('user.dashboard', compact('showDepositPopup'));
     }
 
     /**

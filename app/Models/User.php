@@ -24,6 +24,7 @@ class User extends Authenticatable
         'password',
         'otp',
         'otp_expires_at',
+        'balance',
     ];
 
     /**
@@ -48,6 +49,12 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'otp_expires_at' => 'datetime',
+            'balance' => 'decimal:2',
         ];
+    }
+
+    public function deposits()
+    {
+        return $this->hasMany(Deposit::class);
     }
 }
