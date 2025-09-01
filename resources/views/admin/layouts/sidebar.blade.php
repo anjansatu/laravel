@@ -24,6 +24,14 @@
                       <li><a class="lan-5" href="dashboard-02.html">Ecommerce</a></li>
                     </ul>
                   </li>
+                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{{ route('admin.users.index') }}"><i data-feather="users"></i><span>All Users</span></a></li>
+                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i data-feather="dollar-sign"></i><span>Deposits</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="{{ route('admin.deposits.pending') }}">Pending</a></li>
+                      <li><a href="{{ route('admin.deposits.completed') }}">Completed</a></li>
+                      <li><a href="{{ route('admin.deposits.rejected') }}">Rejected</a></li>
+                    </ul>
+                  </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i data-feather="airplay"></i><span class="lan-6">Widgets</span></a>
                     <ul class="sidebar-submenu">
                       <li><a href="general-widget.html">General</a></li>

@@ -77,5 +77,6 @@
     <script src="{{ asset('backend/assets/js/script.js') }}"></script>
     <script src="{{ asset('backend/assets/js/theme-customizer/customizer.js') }}"></script>
     <!-- login js-->
+    @stack('scripts')
 </body>
 </html>

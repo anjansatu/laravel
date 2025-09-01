@@ -35,7 +35,8 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            background-size: cover;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
         }
 
         .auth-card {
@@ -51,8 +52,16 @@
         .auth-card .form-control {
             border: 1px solid purple;
             border-radius: 8px;
-            font-size: 0.9rem;
-            padding: 8px 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff;
+            padding: 12px 16px;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
     </style>
 </head>

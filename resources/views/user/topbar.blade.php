@@ -25,15 +25,11 @@
                 <!-- START CONTENT FOR TOGGLING -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="{{ asset('frontend/index.html') }}">Home</a></li>
-                        <li><a href="#">Inspiration</a></li>
-                        <li><a href="{{ asset('frontend/gallery.html') }}">Gallery</a></li>
-                        <li><a href="{{ asset('frontend/video-gallery.html') }}">Videos</a></li>
-                        <li><a href="#main-content">Blog</a></li>
-                        <li><a href="{{ asset('frontend/about.html') }}">About</a></li>
-                        <li><a href="{{ asset('frontend/contact.html') }}">Contact</a></li>
+                        <li class="active"><a href="{{ route('dashboard') }}">Home</a></li>
                         @auth
-                            <li><a href="{{ route('deposit.create') }}">Deposit</a></li>
+                            <li><a href="#">{{ auth()->user()->username }}</a></li>
+                            <li><a href="#">Balance: {{ auth()->user()->balance }}</a></li>
+                            <li><a href="{{ route('deposit.index') }}">Deposit</a></li>
                             <li>
                                 <a href="{{ route('logout') }}" class="slide-btn"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
