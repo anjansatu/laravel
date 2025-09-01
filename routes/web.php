@@ -31,8 +31,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/dashboard', [AuthController::class, 'adminDashboard'])->name('admin.dashboard');
 
-    Route::get('/deposit', [DepositController::class, 'create'])->name('deposit.create');
+    Route::get('/deposit', [DepositController::class, 'index'])->name('deposit.index');
+    Route::get('/deposit/create', [DepositController::class, 'create'])->name('deposit.create');
     Route::post('/deposit', [DepositController::class, 'store'])->name('deposit.store');
+    Route::get('/deposit/history', [DepositController::class, 'history'])->name('deposit.history');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
@@ -54,8 +56,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
         Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
 
-        Route::get('/deposits', [AdminDepositController::class, 'index'])->name('admin.deposits.index');
+        Route::get('/deposits/pending', [AdminDepositController::class, 'pending'])->name('admin.deposits.pending');
+        Route::get('/deposits/completed', [AdminDepositController::class, 'completed'])->name('admin.deposits.completed');
+        Route::get('/deposits/rejected', [AdminDepositController::class, 'rejected'])->name('admin.deposits.rejected');
         Route::post('/deposits/{deposit}/approve', [AdminDepositController::class, 'approve'])->name('admin.deposits.approve');
+        Route::post('/deposits/{deposit}/reject', [AdminDepositController::class, 'reject'])->name('admin.deposits.reject');
 
         Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
         Route::get('/users/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');

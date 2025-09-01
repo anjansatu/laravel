@@ -11,6 +11,7 @@ class Deposit extends Model
         'amount',
         'currency',
         'status',
+        'address',
     ];
 
     protected function casts(): array

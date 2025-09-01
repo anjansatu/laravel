@@ -10,6 +10,10 @@
             <input type="number" step="0.01" name="amount" id="amount" class="form-control" required>
         </div>
         <div class="mb-3">
+            <label for="address" class="form-label">Deposit Address</label>
+            <input type="text" name="address" id="address" class="form-control" required>
+        </div>
+        <div class="mb-3">
             <label for="currency" class="form-label">Currency</label>
             <select name="currency" id="currency" class="form-control" required>
                 <option value="USD">USD</option>
