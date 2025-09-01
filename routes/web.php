@@ -5,6 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\DepositController;
+use App\Http\Controllers\Admin\DepositController as AdminDepositController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 
 // Route::get('/', function () {
 //     return auth()->check()
@@ -28,6 +31,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/dashboard', [AuthController::class, 'adminDashboard'])->name('admin.dashboard');
 
+    Route::get('/deposit', [DepositController::class, 'create'])->name('deposit.create');
+    Route::post('/deposit', [DepositController::class, 'store'])->name('deposit.store');
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 Route::get('/', function () {
@@ -47,5 +53,12 @@ Route::prefix('admin')->group(function () {
     Route::middleware('auth:admin')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
         Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
+
+        Route::get('/deposits', [AdminDepositController::class, 'index'])->name('admin.deposits.index');
+        Route::post('/deposits/{deposit}/approve', [AdminDepositController::class, 'approve'])->name('admin.deposits.approve');
+
+        Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
+        Route::get('/users/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
+        Route::put('/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
     });
 });

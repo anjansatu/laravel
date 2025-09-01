@@ -1,7 +1,22 @@
 @extends('user.master')
 
 @section('content')
-    
+    @if($showDepositPopup)
+        <div class="modal fade in" id="depositModal" style="display:block;" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Make a Deposit</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <a href="{{ route('deposit.create') }}" class="btn btn-primary">Deposit</a>
+                        <button class="btn btn-default" onclick="document.getElementById('depositModal').style.display='none';">Skip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     <!-- START HOMEPAGE DESIGN AREA -->
     <header id="home" class="welcome-area">
         <div class="welcome-image-area" data-stellar-background-ratio="0.6">
