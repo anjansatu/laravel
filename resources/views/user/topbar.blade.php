@@ -4,7 +4,7 @@
             <div class="col-md-3">
                 <!-- START LOGO DESIGN AREA -->
                 <div class="logo">
-                    <a href="{{ asset('frontend/index.html') }}">
+                    <a href="{{ route('dashboard') }}">
                         <p>SCANDAL</p>
                     </a>
                 </div>

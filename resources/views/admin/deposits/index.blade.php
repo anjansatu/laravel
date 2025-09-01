@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('content')
+@section('admin-content')
 <div class="container mt-5">
     <h2>Deposits</h2>
     @if(session('status'))

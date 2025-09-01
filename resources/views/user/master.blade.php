@@ -45,7 +45,7 @@
 
     @include('user.topbar')
 
-    @yield('content')
+    @yield('user-content')
 
     <!-- LOCAL COPY OF LATEST JQUERY -->
     <script type="text/javascript" src="{{ asset('frontend/assets/js/jquery.min.js') }}"></script>

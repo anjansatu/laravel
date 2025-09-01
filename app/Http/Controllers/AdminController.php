@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\View\View;
 
 class AdminController extends Controller
@@ -18,6 +19,7 @@ class AdminController extends Controller
 
     public function profile(): View
     {
-        return view('admin.profile');
+        $data['admin']= Admin::get()->all();
+        return view('admin.profile',$data);
     }
 }

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('content')
+@section('admin-content')
 <div class="container mt-5">
     <h2>Completed Deposits</h2>
     <table class="table table-bordered">

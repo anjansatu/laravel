@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('content')
+@section('admin-content')
 
     <!-- Loader starts-->
     <div class="loader-wrapper">
@@ -13,11 +13,11 @@
     <!-- login page start-->
     <div class="container-fluid p-0">
       <div class="row m-0">
-        <div class="col-12 p-0">    
+        <div class="col-12 p-0">
           <div class="login-card">
             <div>
               <div><a class="logo" href="index.html"><img class="img-fluid for-light" src="/backend/assets/images/logo/logo2.png" alt="looginpage"></a></div>
-              <div class="login-main"> 
+              <div class="login-main">
                 <form class="theme-form" method="POST" action="{{ route('admin.login.submit') }}">
                   @csrf
                   <h4 class="text-center">Sign in to account</h4>
