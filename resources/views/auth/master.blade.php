@@ -34,23 +34,44 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: radial-gradient(circle at 20% 20%, #0f0c29, #302b63, #24243e);
+            overflow: hidden;
+        }
+
+        .auth-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            animation: stars 60s linear infinite;
+            opacity: .5;
         }
 
         .auth-card {
             width: 100%;
             max-width: 500px;
-            background-color: rgba(255, 255, 255, 0.75);
+            background-color: rgba(52, 58, 64, 0.85);
             border: 2px solid #FFD700;
             border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-card .card-header {
+            background-color: #343a40;
+            color: #FFD700;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            font-weight: bold;
         }
 
         .auth-card .form-control {
-            border: 1px solid purple;
+            border: 1px solid #6c757d;
             border-radius: 8px;
             font-size: 100%;
             font-weight: bold;
@@ -58,10 +79,13 @@
             padding: 12px 16px;
         }
 
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
+        .invalid-feedback {
+            display: block;
+        }
+
+        @keyframes stars {
+            from {transform: translateY(0);}
+            to {transform: translateY(-2000px);}
         }
     </style>
 </head>

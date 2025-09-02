@@ -3,11 +3,12 @@
 @section('user-content')
 <div class="container mt-5">
     <h2 class="mb-4">Chat with Admin</h2>
-    <div class="mb-3" style="max-height:300px; overflow-y:auto;">
+    <div class="chat-window mb-3">
         @foreach($messages as $message)
-            <div class="mb-2">
-                <strong>{{ $message->sender === 'user' ? 'You' : 'Admin' }}:</strong>
-                {{ $message->message }}
+            <div class="d-flex {{ $message->sender === 'user' ? 'justify-content-end' : 'justify-content-start' }}">
+                <div class="chat-bubble {{ $message->sender === 'user' ? 'user' : 'admin' }}">
+                    {{ $message->message }}
+                </div>
             </div>
         @endforeach
     </div>

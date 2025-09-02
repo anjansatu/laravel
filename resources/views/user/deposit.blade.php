@@ -4,9 +4,9 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card shadow-lg border-0">
+            <div class="card card-grey shadow-lg">
+                <div class="card-header text-center">Deposit</div>
                 <div class="card-body p-4">
-                    <h2 class="mb-4 text-center">Deposit</h2>
                     <form method="POST" action="{{ route('deposit.store') }}">
                         @csrf
                         <div class="mb-3">

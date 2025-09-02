@@ -28,7 +28,7 @@
                         <li class="active"><a href="{{ route('dashboard') }}">Home</a></li>
                         @auth
                             <li><a href="#">{{ auth()->user()->username }}</a></li>
-                            <li><a href="#">Balance: {{ auth()->user()->balance }}</a></li>
+                            <li><a href="#">Balance: {{ rtrim(rtrim(number_format(auth()->user()->balance, 2, '.', ''), '0'), '.') }}</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     Deposit <span class="caret"></span>

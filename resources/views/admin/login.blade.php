@@ -1,5 +1,17 @@
 @extends('admin.layouts.master')
 @section('admin-content')
+<style>
+body {
+    background: radial-gradient(circle at 20% 20%, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: adminGalaxy 15s ease infinite;
+}
+@keyframes adminGalaxy {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+</style>
 
     <!-- Loader starts-->
     <div class="loader-wrapper">
