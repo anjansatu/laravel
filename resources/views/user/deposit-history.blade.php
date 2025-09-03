@@ -22,15 +22,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($deposits as $deposit)
+                                @forelse($deposits as $deposit)
                                 <tr>
                                     <td>{{ $deposit->address }}</td>
-                                    <td>{{ $deposit->amount }}</td>
+                                    <td>${{ number_format($deposit->amount, 2) }}</td>
                                     <td>{{ $deposit->currency }}</td>
                                     <td>{{ $deposit->created_at }}</td>
-                                    <td>{{ $deposit->status }}</td>
+                                    <td>
+                                        <span class="badge {{ $deposit->status === 'completed' ? 'bg-success' : ($deposit->status === 'pending' ? 'bg-warning' : 'bg-danger') }}">
+                                            {{ ucfirst($deposit->status) }}
+                                        </span>
+                                    </td>
                                 </tr>
-                                @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="5" class="text-center">No deposits found.</td>
+                                </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

@@ -7,6 +7,7 @@ use App\Http\Requests\ResetPasswordRequest;
 use App\Mail\PasswordResetOtpMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class PasswordResetController extends Controller
@@ -32,11 +33,17 @@ class PasswordResetController extends Controller
             'otp_expires_at' => now()->addMinutes(10),
         ])->save();
 
-        Mail::to($user->email)->send(new PasswordResetOtpMail($otp));
+        try {
+            Mail::to($user->email)->send(new PasswordResetOtpMail($otp));
+            Log::info('Password reset OTP for '.$user->email.': '.$otp);
+        } catch (\Throwable $e) {
+            Log::error('Failed to send password reset OTP: '.$e->getMessage());
+            return back()->withErrors(['email' => 'Failed to send OTP. Please try again later.']);
+        }
 
         session(['otp_email' => $user->email]);
 
-        return redirect()->route('password.reset');
+        return redirect()->route('password.reset')->with('status', 'An OTP has been sent to your email address.');
     }
 
     /**

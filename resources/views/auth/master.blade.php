@@ -52,11 +52,12 @@
 
         .auth-card {
             width: 100%;
-            max-width: 500px;
-            background-color: rgba(52, 58, 64, 0.85);
+            max-width: 650px;
+            padding: 2rem 3rem;
+            background-color: rgba(52, 58, 64, 0.9);
             border: 2px solid #FFD700;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(5px);
             position: relative;
             z-index: 1;
@@ -65,9 +66,26 @@
         .auth-card .card-header {
             background-color: #343a40;
             color: #FFD700;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
             font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .auth-card .btn-primary {
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            border: none;
+            border-radius: 30px;
+            padding: 0.75rem 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .auth-card .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
         }
 
         .auth-card .form-control {

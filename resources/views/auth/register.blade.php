@@ -42,7 +42,7 @@
                     <label for="password_confirmation" class="form-label">Confirm Password</label>
                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Register</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Register</button>
             </form>
             <div class="text-center mt-3">
                 <a href="{{ route('login') }}">Already have an account? Login</a>
