@@ -10,6 +10,10 @@ use App\Http\Controllers\Admin\DepositController as AdminDepositController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
+use App\Http\Controllers\MarketplaceController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\SsnController as AdminSsnController;
+use App\Http\Controllers\Admin\GmailController as AdminGmailController;
 
 // Route::get('/', function () {
 //     return auth()->check()
@@ -38,8 +42,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/deposit', [DepositController::class, 'store'])->name('deposit.store');
     Route::get('/deposit/history', [DepositController::class, 'history'])->name('deposit.history');
 
+    Route::get('/portal-mail', [MarketplaceController::class, 'portalMail'])->name('portal-mail.index');
+    Route::post('/portal-mail/purchase', [MarketplaceController::class, 'purchaseMail'])->name('portal-mail.purchase');
+    Route::get('/ssn', [MarketplaceController::class, 'ssn'])->name('ssn.index');
+    Route::post('/ssn/purchase', [MarketplaceController::class, 'purchaseSsn'])->name('ssn.purchase');
+
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
     Route::post('/chat', [ChatController::class, 'store'])->name('chat.store');
+
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
+    Route::get('/profile/purchases', [ProfileController::class, 'purchases'])->name('profile.purchases');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
@@ -74,5 +88,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/messages', [AdminMessageController::class, 'index'])->name('admin.messages.index');
         Route::get('/messages/{user}', [AdminMessageController::class, 'show'])->name('admin.messages.show');
         Route::post('/messages/{user}', [AdminMessageController::class, 'store'])->name('admin.messages.store');
+
+        Route::post('/ssns/import', [AdminSsnController::class, 'import'])->name('admin.ssns.import');
+        Route::resource('/ssns', AdminSsnController::class)->except(['show', 'create'])->names('admin.ssns');
+
+        Route::post('/gmails/import', [AdminGmailController::class, 'import'])->name('admin.gmails.import');
+        Route::resource('/gmails', AdminGmailController::class)->except(['show', 'create'])->names('admin.gmails');
     });
-});
+  });

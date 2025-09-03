@@ -26,6 +26,7 @@ class User extends Authenticatable
         'otp_expires_at',
         'balance',
         'status',
+        'avatar',
     ];
 
     /**
@@ -57,5 +58,10 @@ class User extends Authenticatable
     public function deposits()
     {
         return $this->hasMany(Deposit::class);
+    }
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
     }
 }

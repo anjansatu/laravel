@@ -27,7 +27,19 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="{{ route('dashboard') }}">Home</a></li>
                         @auth
-                            <li><a href="#">{{ auth()->user()->username }}</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    {{ auth()->user()->username }} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('profile.show') }}">Profile</a></li>
+                                    <li><a href="{{ route('profile.purchases') }}">Purchases</a></li>
+                                    <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
+                                    </li>
+                                </ul>
+                            </li>
                             <li><a href="#">Balance: {{ rtrim(rtrim(number_format(auth()->user()->balance, 2, '.', ''), '0'), '.') }}</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -38,16 +50,9 @@
                                     <li><a href="{{ route('deposit.history') }}">Deposit History</a></li>
                                 </ul>
                             </li>
+                            <li><a href="{{ route('portal-mail.index') }}">Portal Mail</a></li>
+                            <li><a href="{{ route('ssn.index') }}">SSN</a></li>
                             <li><a href="{{ route('chat.index') }}">Chat</a></li>
-                            <li>
-                                <a href="{{ route('logout') }}" class="slide-btn"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
                         @endauth
                     </ul>
                 </div>
