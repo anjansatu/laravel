@@ -29,6 +29,7 @@
     <!-- RESPONSIVE CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    @stack('styles')
 </head>
 <body>
     <style>
@@ -85,5 +86,6 @@
             });
         </script>
     @endif
+    @stack('scripts')
 </body>
 </html>

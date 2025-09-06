@@ -119,6 +119,7 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    @stack('styles')
   </head>
   <body onload="startTime()">
     <!-- tap on top starts-->

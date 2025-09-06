@@ -11,7 +11,7 @@
                         <div class="alert alert-success">{{ session('status') }}</div>
                     @endif
                     <div class="table-responsive">
-                        <table class="table table-bordered mb-0 table-colorful">
+                        <table class="table table-bordered mb-0 table-colorful" id="depositTable">
                             <thead class="table-light">
                                 <tr>
                                     <th>Address</th>
@@ -48,3 +48,16 @@
     </div>
 </div>
 @endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('frontend/assets/datatables/datatables.min.css') }}">
+@endpush
+
+@push('scripts')
+<script src="{{ asset('frontend/assets/datatables/datatables.min.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new DataTable('#depositTable');
+    });
+</script>
+@endpush
