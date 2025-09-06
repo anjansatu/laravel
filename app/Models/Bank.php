@@ -2,21 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ssn extends Model
+class Bank extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'first_name',
         'last_name',
+        'address',
         'city',
         'state',
-        'ssn',
         'dob',
-        'year',
+        'account_number',
+        'password',
+        'bank_name',
+        'ssn',
         'price',
     ];
 }
+

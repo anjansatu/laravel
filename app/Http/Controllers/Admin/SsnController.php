@@ -25,7 +25,13 @@ class SsnController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'city' => ['required', 'string'],
+            'state' => ['required', 'string'],
             'ssn' => ['required', 'string', 'unique:ssns,ssn'],
+            'dob' => ['required', 'date'],
+            'year' => ['required', 'integer'],
             'price' => ['required', 'numeric'],
         ]);
 
@@ -48,7 +54,13 @@ class SsnController extends Controller
     public function update(Request $request, Ssn $ssn)
     {
         $data = $request->validate([
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'city' => ['required', 'string'],
+            'state' => ['required', 'string'],
             'ssn' => ['required', 'string', 'unique:ssns,ssn,' . $ssn->id],
+            'dob' => ['required', 'date'],
+            'year' => ['required', 'integer'],
             'price' => ['required', 'numeric'],
         ]);
 

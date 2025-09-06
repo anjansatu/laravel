@@ -49,6 +49,28 @@
                     </table>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Bank Purchases</h3></div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr><th>Account</th><th>Price</th><th>Date</th></tr>
+                        </thead>
+                        <tbody>
+                            @forelse($purchases->where('type','bank') as $purchase)
+                                <tr>
+                                    <td>{{ $purchase->item }}</td>
+                                    <td>{{ $purchase->price }}</td>
+                                    <td>{{ $purchase->created_at->format('Y-m-d') }}</td>
+                                </tr>
+                            @empty
+                                <tr><td colspan="3" class="text-center">No purchases</td></tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
