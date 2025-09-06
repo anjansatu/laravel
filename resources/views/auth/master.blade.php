@@ -64,8 +64,8 @@
         }
 
         .auth-card .card-header {
-            background-color: #343a40;
-            color: #FFD700;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #fff;
             border-top-left-radius: 25px;
             border-top-right-radius: 25px;
             font-weight: bold;

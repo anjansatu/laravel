@@ -17,26 +17,32 @@
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach($users as $user)
-            <tr>
-                <td>{{ $user->username }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->phone }}</td>
-                <td>{{ $user->status }}</td>
-                <td>{{ $user->balance }}</td>
-                <td><a class="btn btn-sm btn-primary" href="{{ route('admin.users.edit', $user) }}">Edit</a></td>
-            </tr>
-            @endforeach
-        </tbody>
+        <tbody></tbody>
     </table>
 </div>
+@push('styles')
+<link rel="stylesheet" href="{{ asset('backend/assets/css/vendors/datatables.css') }}">
+<link rel="stylesheet" href="{{ asset('backend/assets/css/vendors/datatable-extension.css') }}">
+@endpush
+
 @push('scripts')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('backend/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('backend/assets/js/datatable/datatables/datatable.custom.js') }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        new DataTable('#usersTable');
+        $('#usersTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{{ route('admin.users.data') }}',
+            columns: [
+                {data: 'username', name: 'username'},
+                {data: 'email', name: 'email'},
+                {data: 'phone', name: 'phone'},
+                {data: 'status', name: 'status'},
+                {data: 'balance', name: 'balance'},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ]
+        });
     });
 </script>
 @endpush
