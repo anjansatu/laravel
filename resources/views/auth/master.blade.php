@@ -63,14 +63,15 @@
             z-index: 1;
         }
 
-        .auth-card .card-header {
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-            color: #fff;
+       .auth-card .card-header {
+            background: linear-gradient(45deg, #49070a, #fad0c4);
+            color: #0bff30;
             border-top-left-radius: 25px;
             border-top-right-radius: 25px;
             font-weight: bold;
             font-size: 1.5rem;
         }
+
 
         .auth-card .btn-primary {
             background: linear-gradient(45deg, #ff8a00, #e52e71);
@@ -79,7 +80,7 @@
             padding: 0.75rem 1rem;
             font-size: 1.1rem;
             font-weight: 600;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(22, 226, 216, 0.3);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 

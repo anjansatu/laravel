@@ -1,5 +1,5 @@
-@extends('admin.layouts.master')
-@section('admin-content')
+@extends('layouts.master')
+@section('content')
 <style>
 body {
     background: radial-gradient(circle at 20% 20%, #0f0c29, #302b63, #24243e);
@@ -28,7 +28,7 @@ body {
         <div class="col-12 p-0">
           <div class="login-card">
             <div>
-              <div><a class="logo" href="index.html"><img class="img-fluid for-light" src="/backend/assets/images/logo/logo2.png" alt="looginpage"></a></div>
+              {{-- <div><a class="logo" href="index.html"><img class="img-fluid for-light" src="/backend/assets/images/logo/logo2.png" alt="looginpage"></a></div> --}}
               <div class="login-main">
                 <form class="theme-form" method="POST" action="{{ route('admin.login.submit') }}">
                   @csrf

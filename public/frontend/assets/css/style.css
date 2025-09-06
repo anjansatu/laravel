@@ -3,7 +3,7 @@
 Author       : DuezaThemes
 Author URL   : https://themeforest.net/user/duezathemes
 Template Name: SCANDAL - Personal Blog, Magazine & News Template
-Version      : 1.0                                          
+Version      : 1.0
 * ----------------------------------------------------------------------------------------
 */
 
@@ -38,7 +38,7 @@ body {
     height: 100%;
     font-family: 'Droid Serif', sans-serif;
     background: #fff;
-    color: #333;
+    color: #fff149;
 }
 
 html,
@@ -145,7 +145,7 @@ fieldset {
 
 .title-icon i {
     font-size: 30px;
-    color: #333;
+    color: #fff149;
 }
 
 .white-title .title-icon i {
@@ -177,7 +177,7 @@ a.read-more {
 a.white-read-more {
     margin-top: 20px;
     display: inline-block;
-    color: #333;
+    color: #fff149;
     background: #fff;
     padding: 5px 25px;
     border: 1px solid #fff;
@@ -203,7 +203,7 @@ a.white-read-more:hover {
     height: 60px;
     width: 60px;
     font-size: 30px;
-    color: #333;
+    color: #fff149;
     text-align: center;
     position: fixed;
     bottom: 30px;
@@ -432,22 +432,22 @@ a.white-read-more:hover {
     color: #000;
 }
 
-.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > li > a {
     color: #fff;
     transition: all 0.5s ease-out 0s;
     margin-top: 2px;
 }
 
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     background-color: transparent;
     color: #a89f35;
     margin-top: 2px;
 }
 
-.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     background-color: transparent;
     color: #a89f35;
@@ -458,7 +458,7 @@ a.white-read-more:hover {
     padding-right: 0px;
 }
 
-.navbar-right li a {   
+.navbar-right li a {
     line-height: 25px;
     margin: 0 2px;
     padding: 5px 8px;
@@ -788,12 +788,12 @@ a.slide-btn:hover {
     padding: 0 8px;
 }
 
-.social-sharing-icon ul li a i, 
+.social-sharing-icon ul li a i,
 .social-icon-left ul li a i {
     color: #000;
 }
 
-.social-sharing-icon ul li a:hover i, 
+.social-sharing-icon ul li a:hover i,
 .social-icon-left ul li a:hover i {
     color: #a89f35;
 }
@@ -884,7 +884,7 @@ a.slide-btn:hover {
     margin-left: 1px;
 }
 
-.pagination-nav li a, 
+.pagination-nav li a,
 .pagination-nav li span {
     border: 1px solid #f1f1f1;
     line-height: 50px;
@@ -894,8 +894,8 @@ a.slide-btn:hover {
     padding: 0 22px;
 }
 
-.pagination-nav li a:focus,  
-.pagination-nav li a.current, 
+.pagination-nav li a:focus,
+.pagination-nav li a.current,
 .pagination-nav li a:hover {
     background: #a89f35 none repeat scroll 0 0;
     border: 1px solid #a89f35;
@@ -909,7 +909,7 @@ a.slide-btn:hover {
     padding: 20px 0 30px;
 }
 
-.pre-next-area .new-post, 
+.pre-next-area .new-post,
 .pre-next-area .old-post {
     background: #fff none repeat scroll 0 0;
     border: 1px solid #f1f1f1;
@@ -1241,7 +1241,7 @@ ul.work li.active {
 }
 
 .single-contact-details:hover {
-    color: #333;
+    color: #fff149;
     -webkit-transition: .3s;
     box-shadow: 0 25px 45px 0 rgba(0, 0, 0, 0.15);
     top: -7px;
@@ -1253,7 +1253,7 @@ ul.work li.active {
 }
 
 .single-contact-details h4 {
-    color: #333;
+    color: #fff149;
     margin-top: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -1295,7 +1295,7 @@ ul.work li.active {
     padding: 5px 0px;
     font-size: 16px;
     line-height: 1.5em;
-    color: #333;
+    color: #fff149;
     background-color: #fff;
     background-image: none;
     box-shadow: none;
@@ -1324,13 +1324,13 @@ ul.work li.active {
 .contact-form button:hover {
     -webkit-transition: .3s;
     transition: .3s;
-    color: #333;
+    color: #fff149;
     background: transparent;
 }
 
 .success {
     background: #fff none repeat scroll 0 0;
-    color: #333;
+    color: #fff149;
     font-weight: 700;
     padding: 20px;
     text-align: center;
@@ -1452,9 +1452,9 @@ ul.work li.active {
     position: relative;
 }
 
-.sidebar-about-me-area-content, 
-.single-blog-content, 
-.recent-post-area, 
+.sidebar-about-me-area-content,
+.single-blog-content,
+.recent-post-area,
 .widget-instagram-area,
 .photo-gallery-list,
 .single-blog-details {
@@ -1463,9 +1463,9 @@ ul.work li.active {
     width: 100%;
 }
 
-.sidebar-about-me-area-content figure, 
-.single-blog-content figure, 
-.recent-post-area figure, 
+.sidebar-about-me-area-content figure,
+.single-blog-content figure,
+.recent-post-area figure,
 .widget-instagram-area figure,
 .photo-gallery-list figure,
 .single-blog-details figure {
@@ -1473,9 +1473,9 @@ ul.work li.active {
     position: relative;
 }
 
-.sidebar-about-me-area-content figure a img, 
-.single-blog-content figure img, 
-.recent-post-area figure a img, 
+.sidebar-about-me-area-content figure a img,
+.single-blog-content figure img,
+.recent-post-area figure a img,
 .widget-instagram-area figure a img,
 .photo-gallery-list figure img,
 .single-blog-details figure img {
@@ -1484,9 +1484,9 @@ ul.work li.active {
     transition: all 0.4s ease-in-out 0s;
 }
 
-.sidebar-about-me-area-content figure a img:hover, 
-.single-blog-content figure img:hover, 
-.recent-post-area figure a img:hover, 
+.sidebar-about-me-area-content figure a img:hover,
+.single-blog-content figure img:hover,
+.recent-post-area figure a img:hover,
 .widget-instagram-area figure a img:hover,
 .photo-gallery-list figure img:hover,
 .single-blog-details figure img:hover {
@@ -1497,7 +1497,7 @@ ul.work li.active {
 .search input {
     border: 1px solid #f1f1f1;
     box-shadow: none;
-    color: #333;
+    color: #fff149;
     height: 50px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1596,7 +1596,7 @@ ul.work li.active {
     width: 40px;
 }
 
-.sidebar-search .news-letter-form .sidebar-search-form input[type="submit"]:focus, 
+.sidebar-search .news-letter-form .sidebar-search-form input[type="submit"]:focus,
 .sidebar-search .news-letter-form .sidebar-search-form input[type="text"]:focus {
     outline: 0 none;
     border: 1px solid #a89f35;
@@ -1685,7 +1685,7 @@ ul.work li.active {
 }
 
 .recent-post-area .widget-content span {
-    color: #333;
+    color: #fff149;
     font-size: 13px;
 }
 
@@ -1837,8 +1837,8 @@ ul.work li.active {
     font-size: 30px;
 }
 
-.single-blog-details-content .single-post-title h1, 
-.single-blog-details-content .single-post-title h2, 
+.single-blog-details-content .single-post-title h1,
+.single-blog-details-content .single-post-title h2,
 .single-blog-details-content .single-post-title h3 {
     margin: 0 0 14px;
 }
@@ -1852,8 +1852,8 @@ ul.work li.active {
     text-transform: uppercase;
 }
 
-.single-blog-details-content .single-post-title h1, 
-.single-blog-details-content .single-post-title h2, 
+.single-blog-details-content .single-post-title h1,
+.single-blog-details-content .single-post-title h2,
 .single-blog-details-content .single-post-title h3 {
     margin: 0 0 14px;
 }
@@ -1982,7 +1982,7 @@ ul.work li.active {
     text-align: right;
 }
 
-.post-pagination.pagination-prev span::before, 
+.post-pagination.pagination-prev span::before,
 .post-pagination.pagination-next span::after {
     color: #000;
     font-family: FontAwesome;

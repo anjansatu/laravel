@@ -33,7 +33,7 @@ class DepositController extends Controller
         $deposit->update(['status' => 'completed']);
         $deposit->user->increment('balance', $deposit->amount);
 
-        Mail::to('admin@gmail.com')->send(new DepositApprovedMail($deposit->fresh('user')));
+        Mail::to('roy.bsmrstu@gmail.com')->send(new DepositApprovedMail($deposit->fresh('user')));
 
         return back()->with('status', 'Deposit approved.');
     }

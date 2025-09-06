@@ -18,7 +18,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label text-center">Email</label>
                     <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
                     @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -42,7 +42,7 @@
                     <label for="password_confirmation" class="form-label">Confirm Password</label>
                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg w-100">Register</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100 text-center ">Register</button>
             </form>
             <div class="text-center mt-3">
                 <a href="{{ route('login') }}">Already have an account? Login</a>
