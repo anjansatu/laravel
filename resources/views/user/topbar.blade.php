@@ -32,7 +32,7 @@
                                     {{ auth()->user()->username }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ route('profile.show') }}">Profile</a></li>
+                                <li><a href="{{ route('profile.details') }}">Profile</a></li>
                                     <li><a href="{{ route('profile.purchases') }}">Purchases</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -52,6 +52,7 @@
                             </li>
                             <li><a href="{{ route('portal-mail.index') }}">Portal Mail</a></li>
                             <li><a href="{{ route('ssn.index') }}">SSN</a></li>
+                            <li><a href="{{ route('bank.index') }}">Bank</a></li>
                             <li><a href="{{ route('chat.index') }}">Chat</a></li>
                         @endauth
                     </ul>

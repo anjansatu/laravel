@@ -6,30 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('ssns', function (Blueprint $table) {
+        Schema::create('banks', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('address');
             $table->string('city');
             $table->string('state');
-            $table->string('ssn')->unique();
             $table->date('dob');
-            $table->integer('year');
+            $table->string('account_number');
+            $table->string('password');
+            $table->string('bank_name');
+            $table->string('ssn');
             $table->decimal('price', 8, 2);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('ssns');
+        Schema::dropIfExists('banks');
     }
 };

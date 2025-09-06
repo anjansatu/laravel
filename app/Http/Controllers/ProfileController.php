@@ -10,7 +10,12 @@ class ProfileController extends Controller
 {
     public function show(Request $request)
     {
-        return view('user.profile', ['user' => $request->user()]);
+        return view('user.profile.details', ['user' => $request->user()]);
+    }
+
+    public function edit(Request $request)
+    {
+        return view('user.profile.edit', ['user' => $request->user()]);
     }
 
     public function update(Request $request)
@@ -27,7 +32,12 @@ class ProfileController extends Controller
 
         $request->user()->update($data);
 
-        return back()->with('status', 'Profile updated successfully.');
+        return redirect()->route('profile.details')->with('status', 'Profile updated successfully.');
+    }
+
+    public function password()
+    {
+        return view('user.profile.password');
     }
 
     public function updatePassword(Request $request)
@@ -41,7 +51,7 @@ class ProfileController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        return back()->with('status', 'Password updated successfully.');
+        return redirect()->route('profile.password.edit')->with('status', 'Password updated successfully.');
     }
 
     public function purchases(Request $request)

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gmail;
 use App\Models\Ssn;
+use App\Models\Bank;
 
 class MarketplaceController extends Controller
 {
@@ -70,5 +71,37 @@ class MarketplaceController extends Controller
         $ssn->delete();
 
         return back()->with('status', 'SSN purchased successfully.');
+    }
+
+    public function bank()
+    {
+        $banks = Bank::all();
+        return view('user.bank', compact('banks'));
+    }
+
+    public function purchaseBank(Request $request)
+    {
+        $data = $request->validate([
+            'bank_id' => ['required', 'exists:banks,id'],
+        ]);
+
+        $bank = Bank::findOrFail($data['bank_id']);
+        $user = $request->user();
+
+        if ($user->balance < $bank->price) {
+            return back()->withErrors('Insufficient balance.');
+        }
+
+        $user->decrement('balance', $bank->price);
+
+        $user->purchases()->create([
+            'type' => 'bank',
+            'item' => $bank->account_number,
+            'price' => $bank->price,
+        ]);
+
+        $bank->delete();
+
+        return back()->with('status', 'Bank purchased successfully.');
     }
 }

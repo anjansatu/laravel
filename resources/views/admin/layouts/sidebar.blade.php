@@ -25,6 +25,7 @@
                     </li>
                     <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{{ route('admin.ssns.index') }}"><i data-feather="hash"></i><span>SSN</span></a></li>
                     <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{{ route('admin.gmails.index') }}"><i data-feather="mail"></i><span>Gmail</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{{ route('admin.banks.index') }}"><i data-feather="credit-card"></i><span>Bank</span></a></li>
                   </ul>
                 </div>
               </nav>
