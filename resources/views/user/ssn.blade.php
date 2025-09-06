@@ -10,6 +10,9 @@
                     @if(session('status'))
                         <div class="alert alert-success">{{ session('status') }}</div>
                     @endif
+                    @if($errors->any())
+                        <div class="alert alert-danger">{{ $errors->first() }}</div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table table-bordered mb-0 table-colorful">
                             <thead class="table-light">
@@ -27,8 +30,7 @@
                                     <td>
                                         <form method="POST" action="{{ route('ssn.purchase') }}">
                                             @csrf
-                                            <input type="hidden" name="ssn" value="{{ $ssn->ssn }}">
-                                            <input type="hidden" name="price" value="{{ $ssn->price }}">
+                                            <input type="hidden" name="ssn_id" value="{{ $ssn->id }}">
                                             <button class="btn btn-success btn-sm">Purchase</button>
                                         </form>
                                     </td>

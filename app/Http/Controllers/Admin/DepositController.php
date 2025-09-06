@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\DepositApprovedMail;
 use App\Models\Deposit;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 
 class DepositController extends Controller
 {
@@ -30,6 +32,8 @@ class DepositController extends Controller
     {
         $deposit->update(['status' => 'completed']);
         $deposit->user->increment('balance', $deposit->amount);
+
+        Mail::to('admin@gmail.com')->send(new DepositApprovedMail($deposit->fresh('user')));
 
         return back()->with('status', 'Deposit approved.');
     }

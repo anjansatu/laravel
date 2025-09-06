@@ -32,6 +32,26 @@
             </div>
           <!-- Container-fluid starts-->
           <div class="container-fluid dashboard-default">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Deposits</h5>
+                    <p>Today's Deposits: ${{ number_format($todayDeposit, 2) }}</p>
+                    <p>This Month: ${{ number_format($monthDeposit, 2) }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Purchases</h5>
+                    <p>Today's Purchases: ${{ number_format($todayPurchase, 2) }}</p>
+                    <p>This Month: ${{ number_format($monthPurchase, 2) }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <div class="col-xxl-6 col-xl-5 col-lg-6 dash-45 box-col-40">
                 <div class="card profile-greeting">
