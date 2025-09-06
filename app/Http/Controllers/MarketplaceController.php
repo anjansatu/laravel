@@ -17,15 +17,25 @@ class MarketplaceController extends Controller
     public function purchaseMail(Request $request)
     {
         $data = $request->validate([
-            'email' => ['required', 'email'],
-            'price' => ['required', 'numeric'],
+            'mail_id' => ['required', 'exists:gmails,id'],
         ]);
 
-        $request->user()->purchases()->create([
+        $mail = Gmail::findOrFail($data['mail_id']);
+        $user = $request->user();
+
+        if ($user->balance < $mail->price) {
+            return back()->withErrors('Insufficient balance.');
+        }
+
+        $user->decrement('balance', $mail->price);
+
+        $user->purchases()->create([
             'type' => 'mail',
-            'item' => $data['email'],
-            'price' => $data['price'],
+            'item' => $mail->email,
+            'price' => $mail->price,
         ]);
+
+        $mail->delete();
 
         return back()->with('status', 'Mail purchased successfully.');
     }
@@ -39,15 +49,25 @@ class MarketplaceController extends Controller
     public function purchaseSsn(Request $request)
     {
         $data = $request->validate([
-            'ssn' => ['required', 'string'],
-            'price' => ['required', 'numeric'],
+            'ssn_id' => ['required', 'exists:ssns,id'],
         ]);
 
-        $request->user()->purchases()->create([
+        $ssn = Ssn::findOrFail($data['ssn_id']);
+        $user = $request->user();
+
+        if ($user->balance < $ssn->price) {
+            return back()->withErrors('Insufficient balance.');
+        }
+
+        $user->decrement('balance', $ssn->price);
+
+        $user->purchases()->create([
             'type' => 'ssn',
-            'item' => $data['ssn'],
-            'price' => $data['price'],
+            'item' => $ssn->ssn,
+            'price' => $ssn->price,
         ]);
+
+        $ssn->delete();
 
         return back()->with('status', 'SSN purchased successfully.');
     }
