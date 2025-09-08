@@ -33,14 +33,20 @@
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required>
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required>
+                        <button type="button" class="btn btn-outline-secondary toggle-password" data-target="#password">Show</button>
+                    </div>
                     @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="password_confirmation" class="form-label">Confirm Password</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
+                    <div class="input-group">
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
+                        <button type="button" class="btn btn-outline-secondary toggle-password" data-target="#password_confirmation">Show</button>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg w-100 text-center ">Register</button>
             </form>
@@ -50,4 +56,18 @@
         </div>
     </div>
 </section>
+<script>
+    document.querySelectorAll('.toggle-password').forEach(function (button) {
+        button.addEventListener('click', function () {
+            const input = document.querySelector(this.dataset.target);
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.textContent = 'Hide';
+            } else {
+                input.type = 'password';
+                this.textContent = 'Show';
+            }
+        });
+    });
+</script>
 @endsection
