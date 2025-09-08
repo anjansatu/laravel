@@ -54,10 +54,24 @@ class ProfileController extends Controller
         return redirect()->route('profile.password.edit')->with('status', 'Password updated successfully.');
     }
 
-    public function purchases(Request $request)
+    public function purchasesMail(Request $request)
     {
-        $purchases = $request->user()->purchases()->latest()->get();
+        $purchases = $request->user()->purchases()->where('type', 'mail')->latest()->get();
 
-        return view('user.purchases', compact('purchases'));
+        return view('user.purchases-mail', compact('purchases'));
+    }
+
+    public function purchasesSsn(Request $request)
+    {
+        $purchases = $request->user()->purchases()->where('type', 'ssn')->latest()->get();
+
+        return view('user.purchases-ssn', compact('purchases'));
+    }
+
+    public function purchasesBank(Request $request)
+    {
+        $purchases = $request->user()->purchases()->where('type', 'bank')->latest()->get();
+
+        return view('user.purchases-bank', compact('purchases'));
     }
 }

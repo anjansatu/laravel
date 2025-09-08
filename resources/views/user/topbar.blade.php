@@ -33,7 +33,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                 <li><a href="{{ route('profile.details') }}">Profile</a></li>
-                                    <li><a href="{{ route('profile.purchases') }}">Purchases</a></li>
+                                    <li><a href="{{ route('profile.purchases.mail') }}">Gmail Purchases</a></li>
+                                    <li><a href="{{ route('profile.purchases.ssn') }}">SSN Purchases</a></li>
+                                    <li><a href="{{ route('profile.purchases.bank') }}">Bank Purchases</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>

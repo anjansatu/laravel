@@ -22,7 +22,9 @@
                     <p><strong>Balance:</strong> {{ rtrim(rtrim(number_format($user->balance,2,'.',''), '0'), '.') }}</p>
                     <a href="{{ route('profile.edit') }}" class="btn btn-primary">Edit Profile</a>
                     <a href="{{ route('profile.password.edit') }}" class="btn btn-warning">Change Password</a>
-                    <a href="{{ route('profile.purchases') }}" class="btn btn-info">Purchases</a>
+                    <a href="{{ route('profile.purchases.mail') }}" class="btn btn-info">Gmail Purchases</a>
+                    <a href="{{ route('profile.purchases.ssn') }}" class="btn btn-info">SSN Purchases</a>
+                    <a href="{{ route('profile.purchases.bank') }}" class="btn btn-info">Bank Purchases</a>
                 </div>
             </div>
         </div>
