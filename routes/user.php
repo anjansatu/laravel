@@ -42,7 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('/profile/password', [ProfileController::class, 'password'])->name('profile.password.edit');
     Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
-    Route::get('/profile/purchases', [ProfileController::class, 'purchases'])->name('profile.purchases');
+    Route::get('/profile/purchases/gmail', [ProfileController::class, 'purchasesMail'])->name('profile.purchases.mail');
+    Route::get('/profile/purchases/ssn', [ProfileController::class, 'purchasesSsn'])->name('profile.purchases.ssn');
+    Route::get('/profile/purchases/bank', [ProfileController::class, 'purchasesBank'])->name('profile.purchases.bank');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
